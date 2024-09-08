@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "husky install",
+    "postinstall": "husky init",
     "prepare": "husky"
   },
   "dependencies": {
