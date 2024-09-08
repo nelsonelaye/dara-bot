@@ -5,14 +5,30 @@ import { GoArrowRight } from "react-icons/go";
 import openaiOutline from "@/assets/images/openai-outline.png";
 import { useMutation } from "@tanstack/react-query";
 import { promptChat } from "@/api";
+import { useDispatch } from "react-redux";
+import { updateChatHistory } from "@/store/slice/chatSlice";
+
 const ChatInput = () => {
+  const dispatch = useDispatch();
+
   const [text, setText] = useState("");
+
+  const saveChat = (role: string, content: string) => {
+    dispatch(updateChatHistory({ role: role, content: content }));
+  };
+
   const { mutate } = useMutation({
     mutationFn: promptChat,
     onSuccess: (res) => {
-      console.log(res);
+      saveChat("dara", res.message);
+      setText("");
     },
   });
+
+  const handleChat = () => {
+    mutate(text);
+    saveChat("user", text);
+  };
 
   return (
     <div className="w-full min-h-[60px]  mx-auto flex items-center bg-white  text-black-100 rounded-[10px] px-4">
@@ -24,12 +40,15 @@ const ChatInput = () => {
         onChange={(e) => {
           setText(e.target.value);
         }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleChat();
+          }
+        }}
       />
       <button
         className="bg-green-100 rounded-lg p-3 cursor-pointer"
-        onClick={() => {
-          mutate(text);
-        }}
+        onClick={handleChat}
       >
         <GoArrowRight color="white" fontSize={20} />
       </button>

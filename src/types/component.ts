@@ -10,3 +10,8 @@ export interface cardInterface {
   title: string;
   description: string;
 }
+
+export interface chatInterface {
+  role: "user" | "bot";
+  content: string;
+}

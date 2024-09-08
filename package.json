@@ -11,6 +11,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
     "@tanstack/react-query": "^5.55.0",
     "axios": "^1.7.7",
     "husky": "^9.1.5",
@@ -18,7 +19,9 @@
     "postcss-reporter": "^7.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
