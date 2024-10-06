@@ -5,7 +5,7 @@ import openai from "@/assets/images/openai.png";
 
 const ChatContent = ({ role, content }: chatInterface) => {
   return (
-    <div className="mb-6">
+    <div className="w-full mb-10">
       <div className="flex  gap-3 mb-3">
         {role === "user" ? (
           <div className="w-[30px] h-[30px] rounded-full bg-black-60"></div>
@@ -15,13 +15,13 @@ const ChatContent = ({ role, content }: chatInterface) => {
             alt="brand logo"
             width={30}
             height={30}
-            className="w-[35px] h-[35px] rounded-full"
+            className="w-[30px] h-[30px] rounded-full"
           />
         )}
 
-        <div>
-          <h4 className="mb-3">{role == "user" ? "You" : "Dara"}</h4>
-          <p>{content}</p>
+        <div className="w-fit">
+          {/* <h4 className="mb-3">{role == "user" ? "You" : "Dara"}</h4> */}
+          <p className="leading-7">{content}</p>
         </div>
       </div>
     </div>

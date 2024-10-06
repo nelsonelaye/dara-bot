@@ -1985,6 +1985,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+next-themes@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.3.0.tgz#b4d2a866137a67d42564b07f3a3e720e2ff3871a"
+  integrity sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==
+
 next@14.2.8:
   version "14.2.8"
   resolved "https://registry.yarnpkg.com/next/-/next-14.2.8.tgz#d5fa17432c7d06bd0c33e3db3c55520b39b34c55"
@@ -2307,6 +2312,11 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-loading-skeleton@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/react-loading-skeleton/-/react-loading-skeleton-3.5.0.tgz#da2090355b4dedcad5c53cb3f0ed364e3a76d6ca"
+  integrity sha512-gxxSyLbrEAdXTKgfbpBEFZCO/P153DnqSCQau2+o6lNy1jgMRr2MmRmOzMmyrwSaSYLRB8g7b0waYPmUjz7IhQ==
 
 react-redux@^9.1.2:
   version "9.1.2"
@@ -2666,6 +2676,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+tailwind-merge@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-2.5.2.tgz#000f05a703058f9f9f3829c644235f81d4c08a1f"
+  integrity sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==
 
 tailwindcss@^3.4.1:
   version "3.4.10"
