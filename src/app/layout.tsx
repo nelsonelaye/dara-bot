@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dara AI",
+  title: "Dara.ai",
   description: "",
 };
 
