@@ -1,54 +1,36 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { GoArrowRight } from "react-icons/go";
 import openaiOutline from "@/assets/images/openai-outline.png";
-import { useMutation } from "@tanstack/react-query";
-import { promptChat } from "@/api";
-import { useDispatch } from "react-redux";
-import { updateChatHistory } from "@/store/slice/chatSlice";
 
-const ChatInput = () => {
-  const dispatch = useDispatch();
+interface props {
+  value: string;
+  SetValue: Dispatch<SetStateAction<string>>;
+  onSubmit: () => void;
+}
 
-  const [text, setText] = useState("");
-
-  const saveChat = (role: string, content: string) => {
-    dispatch(updateChatHistory({ role: role, content: content }));
-  };
-
-  const { mutate } = useMutation({
-    mutationFn: promptChat,
-    onSuccess: (res) => {
-      saveChat("dara", res.message);
-      setText("");
-    },
-  });
-
-  const handleChat = () => {
-    mutate(text);
-    saveChat("user", text);
-  };
-
+const ChatInput = ({ onSubmit, value, SetValue }: props) => {
   return (
     <div className="w-full min-h-[60px]  mx-auto flex items-center bg-white  text-black-100 rounded-[10px] px-4">
       <Image src={openaiOutline} alt="Open AI logo" width={30} height={30} />
       <input
         type="text"
+        placeholder="Ask me anything"
         className="w-full h-full px-3 outline-none border-0 bg-transparent font-medium"
-        value={text}
+        value={value}
         onChange={(e) => {
-          setText(e.target.value);
+          SetValue(e.target.value);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            handleChat();
+            onSubmit();
           }
         }}
       />
       <button
         className="bg-green-100 rounded-lg p-3 cursor-pointer"
-        onClick={handleChat}
+        onClick={onSubmit}
       >
         <GoArrowRight color="white" fontSize={20} />
       </button>

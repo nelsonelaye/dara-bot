@@ -5,6 +5,6 @@ export const promptChat = async (text: string) => {
     const res = await axiosBaseInstance.post("/chat", { text });
     return res.data;
   } catch (err) {
-    return err;
+    throw err;
   }
 };

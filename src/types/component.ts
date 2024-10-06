@@ -14,4 +14,6 @@ export interface cardInterface {
 export interface chatInterface {
   role: "user" | "bot";
   content: string;
+  id?: string;
+  isLastIndex?: boolean;
 }
