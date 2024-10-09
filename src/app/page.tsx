@@ -17,8 +17,10 @@ import {
 import { useMutation } from "@tanstack/react-query";
 import { promptChat } from "@/api";
 import { IoMdAlert } from "react-icons/io";
+// import Replicate from "replicate";
 
 export default function Home() {
+  // const replicate = new Replicate();
   const history = useSelector((state: RootState) => state.chat.history);
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,16 +35,19 @@ export default function Home() {
     mutationKey: ["chat"],
     mutationFn: promptChat,
     onSuccess: (res) => {
-      saveChat("dara", res.message);
+      // console.log(res);
+      saveChat("dara", res.result.response);
     },
     onSettled: () => {
       dispatch(mutateChatLoadingState(false));
     },
   });
 
-  const handleChat = () => {
+  const handleChat = async () => {
     mutate(query);
+
     saveChat("user", query);
+
     setQuery("");
     dispatch(mutateChatLoadingState(true));
   };
@@ -105,13 +110,13 @@ export default function Home() {
                 <p className="text-sm text-black-60 text-center w-[80%]">
                   A conversational AI chatbot built on{" "}
                   <a
-                    href="https://huggingface.co/docs/transformers/en/model_doc/blenderbot"
+                    href="https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct"
                     target="_blank"
                     className="underline"
                   >
-                    Blenderbot
+                    Meta Llama-3
                   </a>{" "}
-                  ML model, trained with a curated dataset on personal finance
+                  ML model
                 </p>
               </div>
               <div className="absolute w-full bottom-5 left-0">

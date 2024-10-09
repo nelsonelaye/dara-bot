@@ -37,7 +37,15 @@ const SideBar = ({
           />
         </h3>
         <p className="text-sm ">
-          Your personal AI assistant for everything finance.
+          A conversational AI Chatbot built on{" "}
+          <a
+            href="https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct"
+            target="_blank"
+            className="underline"
+          >
+            Meta Llama-3
+          </a>{" "}
+          ML model
         </p>
       </div>
     </section>
