@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { Dispatch, SetStateAction } from "react";
 import { GoArrowRight } from "react-icons/go";
-import openaiOutline from "@/assets/images/openai-outline.png";
+import logo from "@/assets/images/abstract.png";
 
 interface props {
   value: string;
@@ -13,7 +13,7 @@ interface props {
 const ChatInput = ({ onSubmit, value, SetValue }: props) => {
   return (
     <div className="w-full min-h-[60px]  mx-auto flex items-center bg-white  text-black-100 rounded-[10px] px-4">
-      <Image src={openaiOutline} alt="Open AI logo" width={30} height={30} />
+      <Image src={logo} alt="Open AI logo" width={30} height={30} />
       <input
         type="text"
         placeholder="Ask me anything"
